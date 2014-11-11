@@ -119,14 +119,15 @@
 
           var video = document.getElementById('video');
           video.src = window.URL.createObjectURL(lOCAL_MEDIA_STREAM);
-          video.volume = 0.9;
+          // video.volume = 0.9;
+          video.muted = true;
           video.play();
 
           var call = peer.call(remote_user_id, lOCAL_MEDIA_STREAM); // call to that id
           call.on('stream', function(stream) {
               // `stream` is the MediaStream of the remote peer.
               // Here you'd add it to an HTML video/canvas element.
-              console.log("receive stream from remote user\n");
+              console.log("1 receive stream from remote user\n");
               var other_video = document.getElementById("other_video");
               other_video.src = window.URL.createObjectURL(stream);
               other_video.play();
@@ -138,7 +139,7 @@
             call.on('stream', function(stream) { // 接收
               // `stream` is the MediaStream of the remote peer.
               // Here you'd add it to an HTML video/canvas element.
-              console.log("receive stream from remote user\n");
+              console.log("2 receive stream from remote user\n");
               var other_video = document.getElementById("other_video");
               other_video.src = window.URL.createObjectURL(stream);
               other_video.play();
