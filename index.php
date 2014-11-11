@@ -16,8 +16,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body>
-        <video id="video" autoplay="autoplay"></video>
         <video id="other_video" autoplay="autoplay"></video>
+        <video id="video" autoplay="autoplay"></video>
         <div id="main_page" class="slide">
           <div id="wrapper">
             <h1 id="big_head"> Video Chat </h1>
