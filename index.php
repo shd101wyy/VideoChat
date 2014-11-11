@@ -16,8 +16,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body>
-        <video id="video" autoplay="autoplay" controls="true"></video>
-        <video id="other_video" autoplay="autoplay" controls="true"></video>
+        <video id="video" autoplay="autoplay"></video>
+        <video id="other_video" autoplay="autoplay"></video>
         <div id="main_page" class="slide">
           <div id="wrapper">
             <h1 id="big_head"> Video Chat </h1>
@@ -69,8 +69,9 @@
 
                 if (DEST === '0') { // no room found
                     $("#enter_our_world_btn").click(function(){
-                        $("#big_head").html("Room Created");
-                        $("#author").html("ask your friend to go to this link ;)<br>\n" + "<strong>http://planetwalley.com/VideoChat/index.php?dest="+MY_ID+"</strong>");
+                        $("#big_head").html("Room Created!");
+                        $("#author").html("<br>ask your friend to go to this link ;)<br>\n" + "<strong>http://planetwalley.com/VideoChat/index.php?dest="+MY_ID+"</strong>");
+                        $("#enter_our_world_btn").hide();
                     })
                 }
                 else{
@@ -96,6 +97,17 @@
           $("#main_page").hide();
           $("#video").show();
           $("#other_video").show();
+
+          $("#video").css("position", "absolute");
+          $("#video").css("width", $(window).width());
+          $("#video").css("height", $(window).height());
+          $("#other_video").css("position", "absolute");
+          $("#other_video").css("width", "400px");
+          $("#other_video").css("height", "400px");
+          $("#other_video").css("right", "0px");
+          $("#other_video").css("bottom", "0px");
+
+
 
           var video = document.getElementById('video');
           video.src = window.URL.createObjectURL(lOCAL_MEDIA_STREAM);
