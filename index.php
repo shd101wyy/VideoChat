@@ -117,9 +117,9 @@
           $("#video").css("bottom", "0px");
 
 
-
           var video = document.getElementById('video');
           video.src = window.URL.createObjectURL(lOCAL_MEDIA_STREAM);
+          video.volume = 0.9;
           video.play();
 
           var call = peer.call(remote_user_id, lOCAL_MEDIA_STREAM); // call to that id
