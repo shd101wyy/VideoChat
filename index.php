@@ -98,14 +98,15 @@
           $("#video").show();
           $("#other_video").show();
 
-          $("#video").css("position", "absolute");
-          $("#video").css("width", $(window).width());
-          $("#video").css("height", $(window).height());
           $("#other_video").css("position", "absolute");
-          $("#other_video").css("width", "400px");
-          $("#other_video").css("height", "400px");
-          $("#other_video").css("right", "0px");
-          $("#other_video").css("bottom", "0px");
+          $("#other_video").css("width", $(window).width());
+          $("#other_video").css("height", $(window).height());
+
+          $("#video").css("position", "absolute");
+          $("#video").css("width", "400px");
+          $("#video").css("height", "400px");
+          $("#video").css("right", "0px");
+          $("#video").css("bottom", "0px");
 
 
 
