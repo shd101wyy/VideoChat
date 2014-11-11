@@ -32,6 +32,9 @@
         if(DEST !== "0"){
           $("#main_page").hide();
         }
+        $("#enter_our_world_btn").click(function(){
+          alert("Please allow browser camera access first ;)");
+        })
         var lOCAL_MEDIA_STREAM;
         var startVideoChat;
         $("#video").hide();
@@ -68,6 +71,7 @@
                 }); 
 
                 if (DEST === '0') { // no room found
+                    $("#enter_our_world_btn").unbind("click");
                     $("#enter_our_world_btn").click(function(){
                         $("#big_head").html("Room Created!");
                         $("#author").html("<br>ask your friend to go to this link ;)<br>\n" + "<strong>http://planetwalley.com/VideoChat/index.php?dest="+MY_ID+"</strong>");
