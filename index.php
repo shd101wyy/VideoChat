@@ -74,9 +74,9 @@
                     $("#enter_our_world_btn").unbind("click");
                     $("#enter_our_world_btn").click(function(){
                         $("#big_head").html("Room Created!");
-                        $("#author").html("<br>ask your friend to go to this link ;)<br>\n" + "<strong>http://planetwalley.com/VideoChat/index.php?dest="+MY_ID+"</strong>");
+                        $("#author").html("<br>ask your friend to go to this link ;)<br><strong>dont' close or refresh this window</strong> while waiting for your friend to connect<br><br>" + "<strong>http://planetwalley.com/VideoChat/index.php?dest="+MY_ID+"</strong>");
                         $("#enter_our_world_btn").unbind('click');
-                        $("#enter_our_world_btn").html("Copy");
+                        $("#enter_our_world_btn").html("Copy Link");
                         $("#enter_our_world_btn").click(function() {
                           window.prompt("Copy to clipboard: Ctrl+C, Enter", "http://planetwalley.com/VideoChat/index.php?dest="+MY_ID);
                         });
