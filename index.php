@@ -170,7 +170,12 @@
 
         
         }
-
+        window.onbeforeunload = function() {
+          peer.disconnect();
+          peer.destroy();
+          return "Conversation has ended";
+        };
       });
+
     </script>
 </html>
