@@ -11,7 +11,7 @@
     <head>
         <!-- Video Chat app using peer.js -->
         <title> Video Chat </title>
-        <script src="./peer.js"></script>     
+        <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
@@ -39,8 +39,27 @@
         var startVideoChat;
         $("#video").hide();
         $("#other_video").hide();
-        var peer = new Peer({ key: 'yba4z07j6lzvvx6r', debug: 3, config: {'iceServers': [
-                  { url: 'stun:stun.l.google.com:19302' } // Pass in optional STUN and TURN server for maximum network compatibility
+        var peer = new Peer({ key: 'a6xdn00xnd6os9k9', debug: 3, config: {'iceServers': [
+                  { url: 'stun:stun.l.google.com:19302' }, // Pass in optional STUN and TURN server for maximum network compatibility
+                  { url: 'stun:stun1.l.google.com:19302'},
+                  { url: 'stun:stun2.l.google.com:19302'},
+                  { url: 'stun:stun3.l.google.com:19302'},
+                  { url: 'stun:stun4.l.google.com:19302'},
+                  { url: 'stun:stun01.sipphone.com'},
+                  { url: 'stun:stun.ekiga.net'},
+                  { url: 'stun:stun.fwdnet.net'},
+                  { url: 'stun:stun.ideasip.com'},
+                  { url: 'stun:stun.iptel.org'},
+                  { url: 'stun:stun.rixtelecom.se'},
+                  { url: 'stun:stun.schlund.de'},
+                  { url: 'stun:stunserver.org'},
+                  { url: 'stun:stun.softjoys.com'},
+                  { url: 'stun:stun.voiparound.com'},
+                  { url: 'stun:stun.voipbuster.com'},
+                  { url: 'stun:stun.voipstunt.com'},
+                  { url: 'stun:stun.voxgratia.org'},
+                  { url: 'stun:stun.xten.com'},
+                  { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
                 ]}});
         var MY_ID = "";
         peer.on('open', function(id){
@@ -144,7 +163,11 @@
               other_video.src = window.URL.createObjectURL(stream);
               other_video.play();
             });
+            peer.on('error', function(err) { console.log("ERROR1:", err)});
           });
+
+          peer.on('error', function(err) { console.log("ERROR2:", err)});
+
         
         }
 
